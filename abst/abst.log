@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.7-u1.21-160201-2.6 (utf8.uptex) (TeX Live 2016) (preloaded format=uplatex 2016.8.23)  2 SEP 2016 15:02
+This is e-upTeX, Version 3.14159265-p3.7-u1.21-160201-2.6 (utf8.uptex) (TeX Live 2016) (preloaded format=uplatex 2016.8.23)  2 SEP 2016 16:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -136,35 +136,17 @@ Overfull \hbox (26.159pt too wide) in paragraph at lines 50--63
  [][][] 
  []
 
-
-Overfull \hbox (4.94846pt too wide) in paragraph at lines 72--73
-[]\JY2/mc/m/n/10 「\OT1/cmr/m/n/10 GitHub\JY2/mc/m/n/10 」 ， 横田一輝\O
-T1/cmr/m/n/10 , https://kotobank.jp/word/GitHub-
- []
-
-
-Underfull \hbox (badness 2418) in paragraph at lines 73--74
-[]\JY2/mc/m/n/10 「\OT1/cmr/m/n/10 Rubyst Mag-a-zine\JY2/mc/m/n/10 」 \OT1/cm
-r/m/n/10 , \JY2/mc/m/n/10 かくたに もろはし \OT1/cmr/m/n/10 vol.54
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-[]\JY2/mc/m/n/10 「\OT1/cmr/m/n/10 give IT a try\JY2/mc/m/n/10 」 ， 伊藤
-淳一\OT1/cmr/m/n/10 ,
- []
-
 [1
 
 
 ] (./abst.aux) ) 
 Here is how much of TeX's memory you used:
- 943 strings out of 493689
- 11565 string characters out of 6149981
+ 944 strings out of 493689
+ 11568 string characters out of 6149981
  75214 words of memory out of 5000000
- 4551 multiletter control sequences out of 15000+600000
+ 4552 multiletter control sequences out of 15000+600000
  12328 words of font info for 61 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  27i,8n,21p,611b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abst.dvi (1 page, 8912 bytes).
+Output written on abst.dvi (1 page, 8816 bytes).
