@@ -1,0 +1,196 @@
+{{toc}}
+
+!概要
+test/unitを使ったtest駆動の導入テキスト
+
+!test/unitへの導入テキスト
+!! rubyのprogram
+!!!printf
+まずcodeの基本となる出力の構文を見てみます．
+<<<ruby
+puts "Hello world."
+p "Hello world."
+print "Hello world.\n"
+printf("Hello world.\n")
+>>>
+puts,printは普通に使います．pはデバッグの時に便利です．また，printfもフォーマットを指定しての出力などに使います．
+
+!!!method
+このままruby言語の構文に進んでもいいのですが，testを導入したいところです．
+そこでその基本となるmethodを見ます．基本構文はC言語に似ています．
+<<<ruby
+def greeting(name)
+#  return "Hello, "+name+"."
+  return "Hello, #{name}."
+#  return 'Hello, #{name}.'
+end
+
+puts "Hello, bob."
+#puts greeting('bob')
+puts greeting("bob")
+>>>
+ダブルコーテーションとシングルの違いを少し認識してください．また，ダブルコーテーションでは変数の展開が可能ですので，printfと同じようなことができます．
+!!!assert
+さて，testデス．まずは，次の構文をよく読んでみてください．
+<<<ruby
+# -*- coding: utf-8 -*-                                                         
+def イコール確認(期待値, 実行値)
+  if 期待値==実行値
+    return true
+  else
+    return false
+  end
+end
+
+def あいさつ(名前)
+  return "こんにちは, #{名前}."
+end
+
+puts あいさつ("bob")
+
+p イコール確認("こんにちは, 西谷先生．",あいさつ("西谷先生"))
+p イコール確認("こんにちは, 西谷先生．",あいさつ("西谷"))
+>>>
+わかります？ rubyでは文字列だけでなく，変数名や関数名に日本語を使っても動きます．
+動かしてみると，
+<<<
+bob% ruby greeting0.rb
+こんにちは, 西谷先生．
+true
+false
+>>>
+とちゃんと動きます．日本語で動作を記述すると，
+ "Hello, bob."とあいさつ("bob")のイコール確認をpしなさい．
+となります．
+ただ，go globalなんで英語にしましょう．
+<<<ruby
+def assert_equal(expected, actual)
+  if expected==actual
+    return true 
+  else
+    return false
+  end
+end
+
+def greeting(name)
+  return "Hello, #{name}."
+end
+
+assert_equal("Hello, bob.",greeting("bob"))
+assert_equal("Hello, bob.",greeting("donkey"))
+>>>
+これでも同様にテストできます．
+!! testの導入
+今後のために，もうすこし本格的なtesting frameworkを導入しましょう．これは，test/unitというgemで提供されています．これを動作させるにはclassというのが必要になります．
+<<<ruby
+require 'test/unit'
+
+def greeting(name)
+  return "Hello, #{name}."
+end
+
+class Test_Sample < Test::Unit::TestCase
+  def test_test()
+    assert_equal("Hello, bob.",greeting("bob"))
+    assert_equal("Hello, bob.",greeting("donkey"))
+  end
+end
+>>>
+そんなに変わってませんよね．なれるまで，あるいはclassが理解できるようになるまでは，呪文だと思ってください．
+
+いいのは，
+<<<
+bob% ruby test_unit_test1.rb
+Loaded suite test_unit_test1
+Started
+.
+
+Finished in 0.001082 seconds.
+--------------------------------------------------------------------------------
+1 tests, 2 assertions, 0 failures, 0 errors, 0 pendings, 0 omissions, 0 notifications
+100% passed
+--------------------------------------------------------------------------------
+924.21 tests/s, 1848.43 assertions/s
+>>>
+と出力が綺麗になります．失敗するとちょっと落ち込む出力が出てきます．
+
+でも，赤ばかりの状態から，緑になると達成感が湧いてきます．ここで，コーヒを飲みましょう．そして出力を眺めてください．
+
+赤い状態を作っておいて，次に緑になるためにcodeを修正していくことがプログラムの基本反復です．これは，テスト駆動開発(test driven development)と呼ばれています．動作を記述するテストを書いてから，中身の動作をそれにあわせて書いていく．失敗したら修正する．緑になったらてすと終了というのが，いいところです．
+
+!! testの分割
+コードをいじるときはできるだけ短いほうが見やすく，間違いが起こりにくいです．そこで，テスト部と動作部を分けましょう．
+<<<ruby
+ bob% cat test_greeting1.rb
+require 'test/unit'
+require './greeting'
+
+class Test_Sample < Test::Unit::TestCase
+  def test_greeting
+    assert_equal("Hello, bob.",greeting("bob"))
+    assert_not_equal("Hello, bob.",greeting("donkey"))
+  end
+end
+>>>
+
+<<<ruby
+bob% cat greeting.rb
+def greeting(name)
+  return "Hello, #{name}."
+end
+>>>
+です．
+!! ファイルの直接指定 if $0==__FILE__
+関数を独立させて，見やすい状態にしたうえで，codeの修正をしていくのですが，test/unitの出力ですとごちゃごちゃして見難いです．そこで，関数だけが動作するようにしておくと便利です．そのためのイディオムが存在します．
+<<<ruby
+def greeting(name)
+  return "Hello, #{name}."
+end
+
+if $0 == __FILE__ 
+  puts greeting('bob')
+end
+>>>
+
+!! 課題：複数テストの導入
+これでほぼ基本は終了です．
+<<<
+test_greeting.rbにあらたな関数good_byeのテストを加えてください．
+good_byeの仕様は次のとおりとしましょう．
+ 'bob'を受け取った場合は，"good bye, bob"と返す．
+>>>
+
+
+!極道編を参考にtest/unitに変えられないかを模索した時のメモ
+
+*[[外部テキストを使ったassert|http://www.clear-code.com/blog/2013/1/23.html]]
+*[[いっぺんにたくさんのテスト|http://qiita.com/repeatedly/items/727b08599d87af7fa671]]
+
+!runit
+runitは古いlibみたい．
+<<<
+bob% gem install runit
+ERROR:  Could not find a valid gem 'runit' (>= 0) in any repository
+ERROR:  Possible alternatives: RunIt
+>>>
+以下のcodeは1.8.7では動く
+<<< ruby
+require 'runit/assert'
+include RUNIT::Assert #OK only 1.8.7?                                           
+
+def greeting(name)
+  return "Hello, #{name}."
+end
+
+assert_equal("Hello, bob.",greeting("bob"))
+assert_equal("Hello, bob.",greeting("bob."))
+>>>
+
+<<<
+bob% ruby test_unit_test0.rb
+Hello, bob.
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/test/unit/assertions.rb:48:in `assert_block': <"Hello, bob."> expected but was (Test::Unit::AssertionFailedError)
+>>>
+
+あたらしいtest/unitで極道テキストを読み替えるだけでうまくいくような「手」を探したがなさそう．
+そこで，新しいテキストをつくってみます．試してみて意見をください．
