@@ -59,40 +59,43 @@
 
       <iframe id="search_frame" src="file_list.html"></iframe>
 
-      <div id="content"><div id='filecontents'><h1>テスト駆動</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-%E3%83%86%E3%82%B9%E3%83%88%E9%A7%86%E5%8B%95">テスト駆動</h1>
 
-<p>テストは，Rakefileのあるrubynoviceのdirにおいて，</p>
+<p>テストは，Rakefileのあるrubynoviceのdirにおいて，
+&lt;code&gt;tcsh
+rake spec
+donkey
+&lt;/code&gt;
+とすると，ex1--ex5まで全てをtest.</p>
 
-<pre class="code tcsh"><code class="tcsh">rake spec donkey
-</code></pre>
+<p>あるいは，ex1だけを全て(ex1_1,ex1_2,ex1_3)のチェックは，
+&lt;code&gt;tcsh
+(cshでは)setenv
+RUBYNOVICE_NAME donkey
+(bashでは）export
+RUBYNOVICE_NAME=&#39;donkey&#39;
+rspec
+spec/ex1_spec.rb
+&lt;/code&gt;
+でできる．さらに一つの課題だけをチェックするときは，
+&lt;code&gt;tcsh
+bob%
+rspec --tag ex:&quot;ex1_1&quot; spec/ex1_spec.rb
+&lt;/code&gt;
+とする．</p>
 
-<p>とすると，ex1--ex5まで全てをtest.</p>
+<h1 id="label-%E8%A7%A3%E7%AD%94%E8%A8%98%E8%BF%B0">解答記述</h1>
 
-<p>あるいは，ex1だけを全て(ex1_1,ex1_2,ex1_3)のチェックは，</p>
-
-<pre class="code tcsh"><code class="tcsh">(cshでは)setenv RUBYNOVICE_NAME donkey
-(bashでは）export RUBYNOVICE_NAME=&#39;donkey&#39;
-rspec spec/ex1_spec.rb
-</code></pre>
-
-<p>でできる．さらに一つの課題だけをチェックするときは，</p>
-
-<pre class="code tcsh"><code class="tcsh">bob% rspec --tag ex:&quot;ex1_1&quot; spec/ex1_spec.rb
-</code></pre>
-
-<p>とする．</p>
-
-<h1>解答記述</h1>
-
-<p>変数に出力として&quot;ans=2\n&quot;などを代入してprintfで出力させて，
+<p>変数に出力として“ans=2n”などを代入してprintfで出力させて，
 その変数をreturnするようにするとprintfの使い方とあわせて
 テスト駆動させている感じにみえる．rake時に緑字だけでなく，printfの出力についても確認．</p>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:25 2016 by
+  Generated on Fri Sep 23 14:43:15 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>

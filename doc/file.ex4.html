@@ -59,78 +59,95 @@
 
       <iframe id="search_frame" src="file_list.html"></iframe>
 
-      <div id="content"><div id='filecontents'><h1>Ex4. if-制御(OneTwoThree)</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Ex4.+if-%E5%88%B6%E5%BE%A1%28OneTwoThree%29">Ex4. if-制御(OneTwoThree)</h1>
 
-<h2>Ex4_1:1,2,3に対してOne, Two, Threeに</h2>
+<h2 id="label-Ex4_1%3A1%2C2%2C3%E3%81%AB%E5%AF%BE%E3%81%97%E3%81%A6One%2C+Two%2C+Three%E3%81%AB">Ex4_1:1,2,3に対してOne, Two, Threeに</h2>
 
-<pre class="code ruby"><code class="ruby">One.
-Two.
-Three.
-</code></pre>
+<pre class="ruby"><span class="ruby-constant">One</span>.
+<span class="ruby-constant">Two</span>.
+<span class="ruby-constant">Three</span>.
+</pre>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_a'>a</span><span class='op'>=</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>3</span><span class='rbracket'>]</span>
-<span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='int'>0</span><span class='op'>..</span><span class='int'>2</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_tmp'>tmp</span><span class='op'>=</span><span class='id identifier rubyid_a'>a</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_tmp'>tmp</span><span class='op'>==</span><span class='int'>1</span> <span class='kw'>then</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>One.</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>elsif</span> <span class='id identifier rubyid_tmp'>tmp</span><span class='op'>==</span><span class='int'>2</span> <span class='kw'>then</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Two.</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>else</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Three.</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
-</code></pre>
+<pre class="ruby"><span class="ruby-identifier">a</span>=[<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>]
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">tmp</span>=<span class="ruby-identifier">a</span>[<span class="ruby-identifier">i</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tmp</span><span class="ruby-operator">==</span><span class="ruby-value">1</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;One.&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">tmp</span><span class="ruby-operator">==</span><span class="ruby-value">2</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Two.&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Three.&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
-<h2>Ex4_2:西暦(AD2Wareki)</h2>
+<h2 id="label-Ex4_2%3A%E8%A5%BF%E6%9A%A6%28AD2Wareki%29">Ex4_2:西暦(AD2Wareki)</h2>
 
-<p>西暦を代入したら，明治，大正，昭和，平成で答えてくれるプログラムを作成せよ．西暦1868,1912,1926,1989年をそれぞれの元年とする．</p>
-
-<pre class="code ruby"><code class="ruby">class FileTest1 &lt; Test::Unit::TestCase
+<p>西暦を代入したら，明治，大正，昭和，平成で答えてくれるプログラムを作成せよ．西暦1868,1912,1926,1989年をそれぞれの元年とする．
+&lt;code&gt;ruby
+class
+FileTest1 &lt; Test::Unit::TestCase
   def test_fact
-    trial = [[1865,&#39;江戸以前&#39;],[1900,&#39;明治33&#39;],[1915,&#39;大正4&#39;],[1961,&#39;昭和36&#39;],[1998,&#39;平成10&#39;]
+    trial = [[<a
+href="http://1900,'明治33'">1865,'江戸以前'],</a>,[<a
+href="http://1961,'昭和36'">1915,'大正4'],</a>,[1998,&#39;平成10&#39;]
+   
+trial.each{|pair|
+      result = <a href="http://0">leap?(pair</a>)
+     
+assert_equal result, <a href="http://1">pair</a>
+    }
+ 
+end
+end
+&lt;/code&gt;</p>
+
+<h2 id="label-Ex4_3%3A%E7%B4%A0%E6%95%B0%E5%88%A4%E5%AE%9A%28prime_number%3F%29">Ex4_3:素数判定(prime_number?)</h2>
+
+<p>素数判定を原理から実現せよ．ある数nが素数かどうかは，自分自身の数nと1以外の数で割りきれないかどうかで判定される．割り算の余り(剰余)は%で求まる．2からn-1までの数でnを次々と割っていき，割り切れたところでループをbreak．最後までまわっていれば素数(prime
+number)と判定すればよい.
+&lt;code&gt;ruby
+class Test1 &lt; Test::Unit::TestCase
+ 
+def test_fact
+    trial = [[<a href="http://4,false">3,true],</a>,[<a
+href="http://133,false">131,true],</a>]
     trial.each{|pair|
-      result = leap?(pair[0])
-      assert_equal result, pair[1]
+      result
+= <a href="http://0">prime?(pair</a>)
+      assert_equal result, <a
+href="http://1">pair</a>
     }
   end
 end
-</code></pre>
+&lt;/code&gt;</p>
 
-<h2>Ex4_3:素数判定(prime_number?)</h2>
+<h2 id="label-Ex4_4%3A%E9%96%8F%E5%B9%B4%28leap_year%3F%29">Ex4_4:閏年(leap_year?)</h2>
 
-<p>素数判定を原理から実現せよ．ある数nが素数かどうかは，自分自身の数nと1以外の数で割りきれないかどうかで判定される．割り算の余り(剰余)は%で求まる．2からn-1までの数でnを次々と割っていき，割り切れたところでループをbreak．最後までまわっていれば素数(prime number)と判定すればよい.</p>
-
-<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>Test1</span> <span class='op'>&lt;</span> <span class='const'>Test</span><span class='op'>::</span><span class='const'>Unit</span><span class='op'>::</span><span class='const'>TestCase</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_test_fact'>test_fact</span>
-    <span class='id identifier rubyid_trial'>trial</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='int'>3</span><span class='comma'>,</span><span class='kw'>true</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='int'>4</span><span class='comma'>,</span><span class='kw'>false</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='int'>131</span><span class='comma'>,</span><span class='kw'>true</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='int'>133</span><span class='comma'>,</span><span class='kw'>false</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_trial'>trial</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_pair'>pair</span><span class='op'>|</span>
-      <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_prime?'>prime?</span><span class='lparen'>(</span><span class='id identifier rubyid_pair'>pair</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='id identifier rubyid_pair'>pair</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-    <span class='rbrace'>}</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
-</code></pre>
-
-<h2>Ex4_4:閏年(leap_year?)</h2>
-
-<p>うるう年かどうかを表示するプログラムをかけ．うるう年は4で割り切れる数の年．ただし，100で割り切れる年はうるう年でなく，400で割り切れる年はうるう年．1999,2004,1900,2000に対して，それぞれfalse,true,false,trueが返っているかをたしかめよ．</p>
-
-<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>FileTest1</span> <span class='op'>&lt;</span> <span class='const'>Test</span><span class='op'>::</span><span class='const'>Unit</span><span class='op'>::</span><span class='const'>TestCase</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_test_fact'>test_fact</span>
-    <span class='id identifier rubyid_trial'>trial</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='int'>1999</span><span class='comma'>,</span><span class='kw'>false</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='int'>2004</span><span class='comma'>,</span><span class='kw'>true</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='int'>1900</span><span class='comma'>,</span><span class='kw'>false</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='int'>2000</span><span class='comma'>,</span><span class='kw'>true</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_trial'>trial</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_pair'>pair</span><span class='op'>|</span>
-      <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_leap?'>leap?</span><span class='lparen'>(</span><span class='id identifier rubyid_pair'>pair</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='id identifier rubyid_pair'>pair</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-    <span class='rbrace'>}</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
-</code></pre>
+<p>うるう年かどうかを表示するプログラムをかけ．うるう年は4で割り切れる数の年．ただし，100で割り切れる年はうるう年でなく，400で割り切れる年はうるう年．1999,2004,1900,2000に対して，それぞれfalse,true,false,trueが返っているかをたしかめよ．
+&lt;code&gt;ruby
+class
+FileTest1 &lt; Test::Unit::TestCase
+  def test_fact
+    trial = [[<a
+href="http://2004,true">1999,false],</a>,[<a
+href="http://2000,true">1900,false],</a>]
+    trial.each{|pair|
+     
+result = <a href="http://0">leap?(pair</a>)
+      assert_equal result, <a
+href="http://1">pair</a>
+    }
+  end
+end
+&lt;/code&gt;</p>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:25 2016 by
+  Generated on Fri Sep 23 14:43:14 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>

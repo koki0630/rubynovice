@@ -7,4 +7,5 @@ end
 
 if $0 == __FILE__ 
   puts greeting('bob')
+  puts good_bye('bob')
 end

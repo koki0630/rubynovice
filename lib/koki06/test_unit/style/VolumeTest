@@ -1,0 +1,6 @@
+class VolumeTest < Test::Unit::TestCase
+  must"compute volume based on lengh, widthe, and height" do
+    # デフォルトではl(enght)=w(ight)=h(eight)=1
+    assert_equal 1, volume
+
+    # 因数1つのとき, l=x,

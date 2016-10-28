@@ -59,91 +59,90 @@
 
       <iframe id="search_frame" src="file_list.html"></iframe>
 
-      <div id="content"><div id='filecontents'><h1>Ex3. 配列</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Ex3.+%E9%85%8D%E5%88%97">Ex3. 配列</h1>
 
-<h2>Ex3_1:配列(array)</h2>
+<h2 id="label-Ex3_1%3A%E9%85%8D%E5%88%97%28array%29">Ex3_1:配列(array)</h2>
 
-<pre class="code tcsh"><code class="tcsh">5
-4
-3
-2
-1
-</code></pre>
+<pre class="code ruby"><code class="ruby"><span class='int'>5</span>
+<span class='int'>4</span>
+<span class='int'>3</span>
+<span class='int'>2</span>
+<span class='int'>1</span></code></pre>
 
-<p>と出力せよ．specを通すためには，あらかじめ，text=&quot;&quot;を用意しておき，そこへ追加していくようにする．戻り値は，expected = &quot;5\n4\n3\n2\n1\n&quot;を期待している．以下を参考にせよ．</p>
+<p>と出力せよ．specを通すためには，あらかじめ，text=“”を用意しておき，そこへ追加していくようにする．戻り値は，expected =
+“5n4n3n2n1n”を期待している．以下を参考にせよ．
+&lt;code&gt;ruby
+<a
+href="http://5,4,3,2,1">a=</a>
+for i in 0..4 do
+  puts <a
+href="http://i">a</a>
+end
+&lt;/code&gt;
+上でもいいが，下のほうがruby的．
+&lt;code&gt;ruby
+<a
+href="http://5,4,3,2,1">a=</a>
+a.each { |ele| p ele }
+&lt;/code&gt;</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_a'>a</span><span class='op'>=</span><span class='lbracket'>[</span><span class='int'>5</span><span class='comma'>,</span><span class='int'>4</span><span class='comma'>,</span><span class='int'>3</span><span class='comma'>,</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>1</span><span class='rbracket'>]</span>
-<span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='int'>0</span><span class='op'>..</span><span class='int'>4</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_a'>a</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
-<span class='kw'>end</span>
-</code></pre>
+<h2 id="label-Ex3_2%3A1%E3%81%8B%E3%82%89100%E3%81%BE%E3%81%A7%E3%81%AE%E4%B9%B1%E6%95%B0%E3%82%9210%E5%80%8B%E6%A0%BC%E7%B4%8D%E3%81%97%E3%81%9F%E9%85%8D%E5%88%97%E3%82%92%E4%BD%9C%E3%82%8C%EF%BC%8E%28rand%29">Ex3_2:1から100までの乱数を10個格納した配列を作れ．(rand)</h2>
 
-<p>上でもいいが，下のほうがruby的．</p>
+<pre class="code ruby"><code class="ruby"><span class='lbracket'>[</span><span class='int'>45</span><span class='comma'>,</span> <span class='int'>48</span><span class='comma'>,</span> <span class='int'>65</span><span class='comma'>,</span> <span class='int'>68</span><span class='comma'>,</span> <span class='int'>68</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>84</span><span class='comma'>,</span> <span class='int'>22</span><span class='comma'>,</span> <span class='int'>37</span><span class='comma'>,</span> <span class='int'>88</span><span class='rbracket'>]</span></code></pre>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_a'>a</span><span class='op'>=</span><span class='lbracket'>[</span><span class='int'>5</span><span class='comma'>,</span><span class='int'>4</span><span class='comma'>,</span><span class='int'>3</span><span class='comma'>,</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>1</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_ele'>ele</span><span class='op'>|</span> <span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_ele'>ele</span> <span class='rbrace'>}</span>
-</code></pre>
+<pre class="ruby"><span class="ruby-identifier">srand</span>(<span class="ruby-value">0</span>) <span class="ruby-comment">#毎回変わるとチェックできないので，srandで0をrandの種に指定しておく</span>
+<span class="ruby-identifier">a</span>=[]
+<span class="ruby-identifier">a</span>=[]
+<span class="ruby-value">10</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">tmp</span>=<span class="ruby-identifier">rand</span>(<span class="ruby-value">100</span>)<span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">tmp</span>
+  <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tmp</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">a</span>
+</pre>
 
-<h2>Ex3_2:1から100までの乱数を10個格納した配列を作れ．(rand)</h2>
+<h2 id="label-Ex3_3%3A%E3%81%95%E3%81%84%E3%81%93%E3%82%8D%E3%82%92100%E5%9B%9E%E6%8C%AF%E3%81%A3%E3%81%A6%EF%BC%8C1%E3%81%8B%E3%82%896%E3%81%AE%E7%9B%AE%E3%81%8C%E4%BD%95%E5%9B%9E%E5%87%BA%E3%81%9F%E3%81%8B%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%9B%E3%82%88%28dice%29">Ex3_3:さいころを100回振って，1から6の目が何回出たかを表示せよ(dice)</h2>
 
-<pre class="code tcsh"><code class="tcsh">[45, 48, 65, 68, 68, 10, 84, 22, 37, 88]
-</code></pre>
+<pre class="code ruby"><code class="ruby"><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>19</span><span class='comma'>,</span> <span class='int'>18</span><span class='comma'>,</span> <span class='int'>11</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>18</span><span class='comma'>,</span> <span class='int'>14</span><span class='rbracket'>]</span></code></pre>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_srand'>srand</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span> <span class='comment'>#毎回変わるとチェックできないので，srandで0をrandの種に指定しておく
-</span><span class='id identifier rubyid_a'>a</span><span class='op'>=</span><span class='lbracket'>[</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_a'>a</span><span class='op'>=</span><span class='lbracket'>[</span><span class='rbracket'>]</span>
-<span class='int'>10</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_tmp'>tmp</span><span class='op'>=</span><span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>100</span><span class='rparen'>)</span><span class='op'>+</span><span class='int'>1</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_tmp'>tmp</span>
-  <span class='id identifier rubyid_a'>a</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_tmp'>tmp</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_a'>a</span>
-</code></pre>
+<h2 id="label-Ex3_4%3Arand%28%29%E3%81%A7%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%82%8B%E5%B0%8F%E6%95%B0%E3%81%AE10%E6%A1%81%E7%9B%AE%E3%81%BE%E3%81%A7%E3%82%92%E9%85%8D%E5%88%97%E3%81%AB%E8%93%84%E3%81%88%E3%82%88%EF%BC%8E%28rand2list%29">Ex3_4:rand()で生成される小数の10桁目までを配列に蓄えよ．(rand2list)</h2>
 
-<h2>Ex3_3:さいころを100回振って，1から6の目が何回出たかを表示せよ(dice)</h2>
+<pre class="code ruby"><code class="ruby"><span class='float'>0.5488135039273248</span>
+<span class='int'>5</span>
+<span class='int'>4</span>
+<span class='int'>8</span>
+<span class='int'>8</span>
+<span class='int'>1</span>
+<span class='int'>3</span>
+<span class='int'>5</span>
+<span class='int'>0</span>
+<span class='int'>3</span>
+<span class='int'>9</span>
+<span class='lbracket'>[</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>8</span><span class='comma'>,</span> <span class='int'>8</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>9</span><span class='rbracket'>]</span></code></pre>
 
-<pre class="code tcsh"><code class="tcsh">[0, 19, 18, 11, 20, 18, 14]
-</code></pre>
+<pre class="ruby"><span class="ruby-identifier">srand</span>(<span class="ruby-value">0</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">a</span> = <span class="ruby-identifier">rand</span>()
+<span class="ruby-identifier">num</span>=[]
+<span class="ruby-value">10</span>.<span class="ruby-identifier">times</span>{
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">b</span>=(<span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-value">10</span>).<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">num</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">b</span>
+  <span class="ruby-identifier">a</span>=<span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-value">10</span><span class="ruby-operator">-</span><span class="ruby-identifier">b</span>
+}
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">num</span>
+</pre>
 
-<h2>Ex3_4:rand()で生成される小数の10桁目までを配列に蓄えよ．(rand2list)</h2>
+<h2 id="label-Ex3_5%3A%E5%89%8D%E5%95%8F%E3%81%A7%E6%B1%82%E3%82%81%E3%81%9F%E9%85%8D%E5%88%97%E3%81%8B%E3%82%8910%E6%A1%81%E3%81%AE%E6%95%B4%E6%95%B0%E3%82%92%E4%BD%9C%E3%82%8C%EF%BC%8E%28list2int%29">Ex3_5:前問で求めた配列から10桁の整数を作れ．(list2int)</h2>
 
-<pre class="code tcsh"><code class="tcsh">0.5488135039273248
-5
-4
-8
-8
-1
-3
-5
-0
-3
-9
-[5, 4, 8, 8, 1, 3, 5, 0, 3, 9]
-</code></pre>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_srand'>srand</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_num'>num</span><span class='op'>=</span><span class='lbracket'>[</span><span class='rbracket'>]</span>
-<span class='int'>10</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span><span class='lbrace'>{</span>
-  <span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_b'>b</span><span class='op'>=</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='op'>*</span><span class='int'>10</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-  <span class='id identifier rubyid_num'>num</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_b'>b</span>
-  <span class='id identifier rubyid_a'>a</span><span class='op'>=</span><span class='id identifier rubyid_a'>a</span><span class='op'>*</span><span class='int'>10</span><span class='op'>-</span><span class='id identifier rubyid_b'>b</span>
-<span class='rbrace'>}</span>
-<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_num'>num</span>
-</code></pre>
-
-<h2>Ex3_5:前問で求めた配列から10桁の整数を作れ．(list2int)</h2>
-
-<pre class="code tcsh"><code class="tcsh">0.258949661837373
-[2, 5, 8, 9, 4, 9, 6, 6, 1, 8]
-2589496618
-</code></pre>
+<pre class="code ruby"><code class="ruby"><span class='float'>0.258949661837373</span>
+<span class='lbracket'>[</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span> <span class='int'>8</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>8</span><span class='rbracket'>]</span>
+<span class='int'>2589496618</span></code></pre>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:25 2016 by
+  Generated on Fri Sep 23 14:43:14 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>

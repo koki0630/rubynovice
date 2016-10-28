@@ -98,8 +98,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/koki06/test_sample.rb<span class="defines">,<br />
-  lib/koki06/test_sample2.rb</span>
+    <dd>lib/koki06/Rspec/test_sample.rb<span class="defines">,<br />
+  lib/koki06/mini_test/test_sample2.rb,<br /> lib/koki06/mini_test/ex1_minitest.rb</span>
 </dd>
   </dl>
   
@@ -124,6 +124,50 @@
   <span class="summary_signature">
     
       <a href="#test_calc-instance_method" title="#test_calc (instance method)">#<strong>test_calc</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_ex1-instance_method" title="#test_ex1 (instance method)">#<strong>test_ex1</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#test_ex2-instance_method" title="#test_ex2 (instance method)">#<strong>test_ex2</strong>  &#x21d2; Object </a>
     
 
     
@@ -197,13 +241,73 @@
 21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/koki06/test_sample.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/koki06/Rspec/test_sample.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_calc'>test_calc</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='int'>4</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='int'>2</span> <span class='op'>+</span> <span class='int'>2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='int'>1</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='int'>2</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='int'>6</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='int'>2</span> <span class='op'>*</span> <span class='int'>3</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='int'>3</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='int'>9</span> <span class='op'>/</span> <span class='int'>3</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_ex1-instance_method">
+  
+    #<strong>test_ex1</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/koki06/mini_test/ex1_minitest.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_ex1'>test_ex1</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>hello, world!</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'>Sample</span><span class='period'>.</span><span class='id identifier rubyid_ex1_1'>ex1_1</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="test_ex2-instance_method">
+  
+    #<strong>test_ex2</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/koki06/mini_test/ex1_minitest.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_test_ex2'>test_ex2</span>
+  <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='int'>2</span><span class='comma'>,</span> <span class='const'>Sample</span><span class='period'>.</span><span class='id identifier rubyid_ex1_2'>ex1_2</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -230,7 +334,7 @@
 13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/koki06/test_sample.rb', line 11</span>
+      <pre class="code"><span class="info file"># File 'lib/koki06/Rspec/test_sample.rb', line 11</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_test_greeting'>test_greeting</span>
   <span class='id identifier rubyid_assert_equal'>assert_equal</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello, world!</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'>Sample</span><span class='period'>.</span><span class='id identifier rubyid_greeting'>greeting</span>
@@ -245,9 +349,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:26 2016 by
+  Generated on Fri Sep 23 14:43:16 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>

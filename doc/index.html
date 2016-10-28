@@ -59,94 +59,107 @@
 
       <iframe id="search_frame" src="class_list.html"></iframe>
 
-      <div id="content"><div id='filecontents'><h1>Rubynovice</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Rubynovice">Rubynovice</h1>
 
 <p>Ruby programming mastering platform using Github.</p>
 
 <p>情報共有環境であるGithubを使って，Rubyのprogrammingを習得することを目指しています．</p>
 
-<h2>インストール法</h2>
+<h2 id="label-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%B3%95">インストール法</h2>
+<ul><li>
+<p>githubで自分のアカウントにdaddygongon/rubynoviceをforkする</p>
+</li><li>
+<p>自分のPCにcloneする</p>
+</li></ul>
 
-<ul>
-<li>githubで自分のアカウントにdaddygongon/rubynoviceをforkする</li>
-<li>自分のPCにcloneする</li>
-</ul>
+<h2 id="label-%E4%BD%BF%E7%94%A8%E6%B3%95">使用法</h2>
+<ul><li>
+<p>自分の好きな名前(daddy)をつけたディレクトリーを作る．</p>
+</li><li>
+<p>“./lib/daddy/ex_files.rb”を準備</p>
+</li><li>
+<p>ex_files.rbにrequire “ex1”を書く</p>
+</li><li>
+<p>class Rubynoviceに解答を保存していく．</p>
+</li><li>
+<p>書き方は./lib/daddy/ex1_classified.rbを参照のこと．</p>
+</li><li>
+<p>rspecで，個人ごとの検査を実行するには</p>
+</li><li>
+<p>環境変数RUBYNOVICE_NAMEにディレクトリー名を入れる</p>
+<ul><li>
+<p>(csh,tcsh)setenv RUBYNOVICE_NAME daddy</p>
+</li><li>
+<p>(bash,zsh)export RUBYNOVICE_NAME=daddy</p>
+</li></ul>
+</li><li>
+<p>rspec spec/ex2_spec.rb</p>
+</li><li>
+<p>失敗したとこで止める</p>
+<ul><li>
+<p>&#39;rspec spec/ex2_spec.rb –fail-fast&#39;</p>
+</li><li>
+<p>rake spec hogehogeとかでもOKだが動作不安定．</p>
+</li><li>
+<p>複数の検査を一度に処理しようとするときに前のclassが生き残っている？</p>
+</li></ul>
+</li></ul>
 
-<h2>使用法</h2>
+<pre class="ruby"><span class="ruby-identifier">bob</span><span class="ruby-operator">%</span> <span class="ruby-identifier">cat</span> <span class="ruby-identifier">lib</span><span class="ruby-operator">/</span><span class="ruby-identifier">daddy</span><span class="ruby-operator">/</span><span class="ruby-identifier">ex_files</span>.<span class="ruby-identifier">rb</span>
+<span class="ruby-comment">#require &quot;ex1_1&quot;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&quot;ex1_classified&quot;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&quot;ex2_classified&quot;</span>
+</pre>
 
-<ul>
-<li>自分の好きな名前(daddy)をつけたディレクトリーを作る．</li>
-<li>&quot;./lib/daddy/ex_files.rb&quot;を準備</li>
-<li>ex_files.rbにrequire &quot;ex1&quot;を書く</li>
-<li>class Rubynoviceに解答を保存していく．</li>
-<li>書き方は./lib/daddy/ex1_classified.rbを参照のこと．</li>
-<li>rspecで，個人ごとの検査を実行するには
+<pre class="ruby"><span class="ruby-identifier">bob</span><span class="ruby-operator">%</span> <span class="ruby-identifier">cat</span> <span class="ruby-identifier">lib</span><span class="ruby-operator">/</span><span class="ruby-identifier">daddy</span><span class="ruby-operator">/</span><span class="ruby-identifier">ex1_classified</span>.<span class="ruby-identifier">rb</span> 
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Rubynovice</span>
 
-<ul>
-<li>環境変数RUBYNOVICE_NAMEにディレクトリー名を入れる</li>
-<li>(csh,tcsh)setenv RUBYNOVICE_NAME daddy</li>
-<li>(bash,zsh)export RUBYNOVICE_NAME=daddy</li>
-<li>rspec spec/ex2_spec.rb</li>
-<li>失敗したとこで止める</li>
-<li>&#39;rspec spec/ex2_spec.rb  --fail-fast&#39;</li>
-<li>rake spec hogehogeとかでもOKだが動作不安定．</li>
-<li>複数の検査を一度に処理しようとするときに前のclassが生き残っている？</li>
-</ul></li>
-</ul>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">ex1_1</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;hello world.\n&quot;</span>
+  <span class="ruby-keyword">end</span>
 
-<pre class="code ruby"><code class="ruby">bob% cat lib/daddy/ex_files.rb
-#require &quot;ex1_1&quot;
-require &quot;ex1_classified&quot;
-require &quot;ex2_classified&quot;
-</code></pre>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">ex1_2</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">1</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
 
-<pre class="code ruby"><code class="ruby">bob% cat lib/daddy/ex1_classified.rb 
-class Rubynovice
-
-  def ex1_1
-    return &quot;hello world.\n&quot;
-  end
-
-  def ex1_2
-    return 1+1
-  end
-
-  def ex1_3
-    ans = 1+1
-    text = sprintf(&quot;ans=%i\n&quot;,ans)
-    return text
-  end
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">ex1_3</span>
+    <span class="ruby-identifier">ans</span> = <span class="ruby-value">1</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+    <span class="ruby-identifier">text</span> = <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;ans=%i\n&quot;</span>,<span class="ruby-identifier">ans</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">text</span>
+  <span class="ruby-keyword">end</span>
 
 
-end
-</code></pre>
+<span class="ruby-keyword">end</span>
+</pre>
 
-<h2>課題</h2>
+<h2 id="label-%E8%AA%B2%E9%A1%8C">課題</h2>
 
-<h3>Githubではリンク切れ，wikiのSidebarから辿れ</h3>
+<h3 id="label-Github%E3%81%A7%E3%81%AF%E3%83%AA%E3%83%B3%E3%82%AF%E5%88%87%E3%82%8C%EF%BC%8Cwiki%E3%81%AESidebar%E3%81%8B%E3%82%89%E8%BE%BF%E3%82%8C">Githubではリンク切れ，wikiのSidebarから辿れ</h3>
 
-<h3>入門課題</h3>
+<h3 id="label-%E5%85%A5%E9%96%80%E8%AA%B2%E9%A1%8C">入門課題</h3>
 
-<ol>
-<li><a href="file.ex1.html">ex1(gets puts)</a></li>
-<li><a href="file.ex2.html">ex2(loop)</a></li>
-<li><a href="file.ex3.html">ex3(array)</a></li>
-<li><a href="file.ex4.html">ex4(if)</a></li>
-<li><a href="file.ex5.html">ex5(method)</a></li>
-</ol>
+<p>1. <a href="http://file.ex1.html">ex1(gets puts)</a>
+1. <a
+href="http://file.ex2.html">ex2(loop)</a>
+1. <a
+href="http://file.ex3.html">ex3(array)</a>
+1. <a
+href="http://file.ex4.html">ex4(if)</a>
+1. <a
+href="http://file.ex5.html">ex5(method)</a></p>
 
-<h3>発展課題</h3>
+<h3 id="label-%E7%99%BA%E5%B1%95%E8%AA%B2%E9%A1%8C">発展課題</h3>
 
-<ol>
-<li><a href="file.ex_prime.html">ex_prime</a></li>
-<li><a href="file.ex_GoogleRecruit.html">ex_GoogleRecruit</a></li>
-</ol>
+<p>1. <a href="http://file.ex_prime.html">ex_prime</a>
+1. <a
+href="http://file.ex_GoogleRecruit.html">ex_GoogleRecruit</a></p>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:25 2016 by
+  Generated on Fri Sep 23 14:43:13 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>

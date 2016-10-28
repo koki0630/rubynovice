@@ -59,22 +59,22 @@
 
       <iframe id="search_frame" src="file_list.html"></iframe>
 
-      <div id="content"><div id='filecontents'><h1>課題:Google Recruit</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-%E8%AA%B2%E9%A1%8C%3AGoogle+Recruit">課題:Google Recruit</h1>
 
 <p>e(自然対数の底)の値で連続する10桁の数のうち，最初の素数をrubyで求めよ．ただし，e(自然対数の底)は200桁までで</p>
 
-<pre class="code text"><code class="text">2.71828182845904523536028747135266249775
-7247093699959574966967627724076630353547
-5945713821785251664274274663919320030599
-2181741359662904357290033429526059563073
-81323286279434907632338298807531952510190
-</code></pre>
+<pre class="code ruby"><code class="ruby"><span class='float'>2.71828182845904523536028747135266249775</span>
+<span class='int'>7247093699959574966967627724076630353547</span>
+<span class='int'>5945713821785251664274274663919320030599</span>
+<span class='int'>2181741359662904357290033429526059563073</span>
+<span class='int'>81323286279434907632338298807531952510190</span></code></pre>
 
 <p>である．これをテキストにコピーして読みこませよ．</p>
 
-<h2>解説</h2>
+<h2 id="label-%E8%A7%A3%E8%AA%AC">解説</h2>
 
-<p>グーグル、謎の人材募集広告--シリコンバレーのビルボードに　</p>
+<p>グーグル、謎の人材募集広告–シリコンバレーのビルボードに</p>
 
 <p>Stefanie Olsen (CNET News.com) 2004/07/12 08:40</p>
 
@@ -83,97 +83,97 @@
 
 <p>(中略)</p>
 
-<p>この広告には、「eの値中の、最初の連続する10桁の素数.com」(&quot;10 digit prime found in consecutive digits e.com.&quot; )と書かれている。この答えの「7427466391.com」にアクセスすると、そのウェブページにはさらに別の問題(下記参照)が用意されているが、ここにもGoogleが関与していることを示すものは全くない。 この問題を解くと、Googleの研究開発部門「Google Labs」へのページに辿りつく。このページには、「Googleの構築を通して我々が学んだことの1つに、自分が何かを探しているとき、向こうも自分を探している場合のほうが見つかりやすいということがある。我々が探しているのは、世界最高のエンジニアであり、あなたこそその人なのだ」と書かれている。</p>
+<p>この広告には、「eの値中の、最初の連続する10桁の素数.com」(“10 digit prime found in
+consecutive digits e.com.”
+)と書かれている。この答えの「7427466391.com」にアクセスすると、そのウェブページにはさらに別の問題(下記参照)が用意されているが、ここにもGoogleが関与していることを示すものは全くない。
+この問題を解くと、Googleの研究開発部門「Google
+Labs」へのページに辿りつく。このページには、「Googleの構築を通して我々が学んだことの1つに、自分が何かを探しているとき、向こうも自分を探している場合のほうが見つかりやすいということがある。我々が探しているのは、世界最高のエンジニアであり、あなたこそその人なのだ」と書かれている。</p>
 </blockquote>
 
-<p><img src="GoogleRecruit.gif" alt=""></p>
+<p><img src="http://GoogleRecruit.gif" /></p>
 
-<h2>解法</h2>
+<h2 id="label-%E8%A7%A3%E6%B3%95">解法</h2>
 
 <p>各個撃破(あるいは分割統治)で解いて行く．おおまかな流れは，</p>
 
-<ol>
-<li>eの値中の、連続する10桁の数
-
-<ol>
-<li>数の読み込み</li>
-<li>10桁の整数の生成</li>
-</ol></li>
-<li>素数判定</li>
-<li>最初の連続する10桁の素数を捜す</li>
-</ol>
+<p>1. eの値中の、連続する10桁の数
+ 1. 数の読み込み
+ 1. 10桁の整数の生成
+1. 素数判定
+1. 最初の連続する10桁の素数を捜す</p>
 
 <p>である．</p>
 
-<h2>ヒント１：expの読み込み</h2>
+<h2 id="label-%E3%83%92%E3%83%B3%E3%83%88%EF%BC%91%EF%BC%9Aexp%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF">ヒント１：expの読み込み</h2>
 
 <p>テキストの読み込みは，</p>
 
-<pre class="code tcsh"><code class="tcsh">[BobsNewPBG4-6:~/Ruby/google] bob% cat google.rb
+<pre class="code ruby"><code class="ruby">[BobsNewPBG4-6:~/Ruby/google] bob% cat google.rb
 exp1=gets.to_s.chomp
 puts exp1
 [BobsNewPBG4-6:~/Ruby/google] bob% ruby google.rb &lt; exp.txt
-2.71828182845904523536028747...
-</code></pre>
+2.71828182845904523536028747...</code></pre>
 
-<p>exp.txtの内容を&quot;&lt;&quot;で読み込ませている．</p>
+<p>exp.txtの内容を“&lt;”で読み込ませている．</p>
 
-<h2>ヒント２：文字から数字の表示</h2>
+<h2 id="label-%E3%83%92%E3%83%B3%E3%83%88%EF%BC%92%EF%BC%9A%E6%96%87%E5%AD%97%E3%81%8B%E3%82%89%E6%95%B0%E5%AD%97%E3%81%AE%E8%A1%A8%E7%A4%BA">ヒント２：文字から数字の表示</h2>
 
-<p>文字列exp1を配列とみなしてexp1[0]として表示させようとすると失敗する．ここで出てくるのはasciiコードの番号．そこで，chrで表示させる．</p>
+<p><a
+href="http://0">文字列exp1を配列とみなしてexp1</a>として表示させようとすると失敗する．ここで出てくるのはasciiコードの番号．そこで，chrで表示させる．</p>
 
-<pre class="code tcsh"><code class="tcsh">[BobsNewPBG4-6:~/Ruby/google] bob% cat google2.rb
+<pre class="code ruby"><code class="ruby">[BobsNewPBG4-6:~/Ruby/google] bob% cat google2.rb
 exp1=gets.to_s.chomp
 puts exp1
 puts exp1[0]
 puts exp1[1]
 puts exp1[2].chr
 puts exp1[3].chr.to_i
-puts exp1[3..12].to_i
-</code></pre>
+puts exp1[3..12].to_i</code></pre>
 
-<pre class="code tcsh"><code class="tcsh">[BobsNewPBG4-6:~/Ruby/google] bob% ruby google2.rb &lt; exp.txt
+<pre class="code ruby"><code class="ruby">[BobsNewPBG4-6:~/Ruby/google] bob% ruby google2.rb &lt; exp.txt
 2.71828182845904523536028747135266...
 50
 46
 7
 1
-1828182845
-</code></pre>
+1828182845</code></pre>
 
-<p>もっと簡単には最後のputs exp1[3..12].to_i でいいが，これは後の問題でつかえないのでもうすこしちまちま作る．</p>
+<p>もっと簡単には最後のputs <a href="http://3..12">exp1</a>.to_i
+でいいが，これは後の問題でつかえないのでもうすこしちまちま作る．</p>
 
-<h2>ヒント３：素数判定の高速化</h2>
+<h2 id="label-%E3%83%92%E3%83%B3%E3%83%88%EF%BC%93%EF%BC%9A%E7%B4%A0%E6%95%B0%E5%88%A4%E5%AE%9A%E3%81%AE%E9%AB%98%E9%80%9F%E5%8C%96">ヒント３：素数判定の高速化</h2>
 
 <p>素数判定programのloopの範囲2..i_maxにおいて，i_max=nではなく，i_max=Math::sqrt(n)にすれば高速化される．なぜか考えよ．</p>
 
-<pre class="code tcsh"><code class="tcsh">time ruby Google.rb &lt; exp.txt
+<pre class="code ruby"><code class="ruby">time ruby Google.rb &lt; exp.txt
 99:7427466391
 123:7413596629
 149:6059563073
 171:3490763233
 182:2988075319
-0.862u 0.007s 0:00.87 98.8% 0+0k 0+0io 0pf+0w
-</code></pre>
+0.862u 0.007s 0:00.87 98.8%	0+0k 0+0io 0pf+0w</code></pre>
 
 <p>３章あるいは４章で作った，2..nのloopでは終わらない．</p>
 
-<h1>類題</h1>
+<h1 id="label-%E9%A1%9E%E9%A1%8C">類題</h1>
 
-<p>Congratulations. You&#39;ve made it to level 2. Go to <a href="http://www.Linux.org">www.Linux.org</a> and enter Bobsyouruncle as the login and the answer to this equation as the password.</p>
-
-<pre class="code ruby"><code class="ruby">f(1)=7182818284
+<p>Congratulations. You&#39;ve made it to level 2. Go to <a
+href="http://www.Linux.org">www.Linux.org</a> and enter Bobsyouruncle as
+the login and the answer to this equation as the
+password.
+&lt;code&gt;
+f(1)=7182818284
 f(2)=8182845904
 f(3)=8747135266
 f(4)=7427466391
-f(5)=__________
-</code></pre>
+f(5)=<em>__</em>
+&lt;/code&gt;</p>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:25 2016 by
+  Generated on Fri Sep 23 14:43:14 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>

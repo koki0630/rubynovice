@@ -59,80 +59,83 @@
 
       <iframe id="search_frame" src="file_list.html"></iframe>
 
-      <div id="content"><div id='filecontents'><h1>新しい課題作成へのメモ</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-%E6%96%B0%E3%81%97%E3%81%84%E8%AA%B2%E9%A1%8C%E4%BD%9C%E6%88%90%E3%81%B8%E3%81%AE%E3%83%A1%E3%83%A2">新しい課題作成へのメモ</h1>
 
-<p>2016年の春学期にrubynoviceを4回生に試し始めて幾つかの課題が出てきた．</p>
-
-<ol>
-<li>編集作業の未熟さ</li>
-<li>gitによる混乱</li>
-<li>specを通すことの意識の欠如</li>
-</ol>
+<p>2016年の春学期にrubynoviceを4回生に試し始めて幾つかの課題が出てきた．
+1. 編集作業の未熟さ
+1. gitによる混乱
+1.
+specを通すことの意識の欠如</p>
 
 <p>これらを初学者に意識させることは難しいのかもしれない．つまり写経の前の段階の
 言語化されない作業の言語化が必要らしい．</p>
 
-<p>そこで，以下の見直しを検討していく</p>
-
-<ol>
-<li>cli(cui)</li>
-<li>irb(pry)による導入</li>
-<li>学生実験風のレポート作成</li>
-<li>spec(class,git)のコマンド
+<p>そこで，以下の見直しを検討していく
+1. cli(cui)
+1. irb(pry)による導入
+1. 学生実験風のレポート作成
+1.
+spec(class,git)のコマンド
 これらは，高校時代に行ってきた受験勉強のスタイルに合致するようなシステムを
-提供するべき．それが学習だと思っているから．</li>
-</ol>
+提供するべき．それが学習だと思っているから．</p>
 
-<p>教科書，参考書，問題集...これからreportに切り替える??</p>
+<p>教科書，参考書，問題集…これからreportに切り替える??</p>
 
-<h2>cli(cui)</h2>
+<h2 id="label-cli%28cui%29">cli(cui)</h2>
+<ul><li>
+<p>速さ，柔軟性，命令</p>
+</li><li>
+<p>abbreviation</p>
+</li></ul>
 
-<ul>
-<li>速さ，柔軟性，命令</li>
-<li>abbreviation</li>
-</ul>
+<h2 id="label-irb%28pry%29%E3%81%AB%E3%82%88%E3%82%8B%E5%B0%8E%E5%85%A5">irb(pry)による導入</h2>
 
-<h2>irb(pry)による導入</h2>
-
-<p>edit, run, check作業の簡素化．</p>
-
-<pre class="code ruby"><code class="ruby">[14] pry(main)&gt; history
- 1: puts &quot;hello&quot;
+<p>edit, run, check作業の簡素化．
+&lt;code&gt;ruby
+[14] pry(main)&gt; history
+ 1:
+puts &quot;hello&quot;
  2: puts &quot;Hello&quot;
- 3: puts &quot;Hello Shunkun.&quot;
- 4: 3.times{puts &quot;Hello Shunkun.&quot;}
- 5: 3.times{|i| puts &quot;#{i}:Hello Shunkun.&quot;}
- 6: puts &quot;#{i}:Hello Shunkun.&quot;
+ 3: puts &quot;Hello
+Shunkun.&quot;
+ 4: 3.times&quot;Hello Shunkun.&quot;
+ 5: 3.times{|i|
+puts &quot;#{i}:Hello Shunkun.&quot;}
+ 6: puts &quot;#i:Hello
+Shunkun.&quot;
  7: i=123
- 8: puts &quot;#{i}:Hello Shunkun.&quot;
- 9: print &quot;#{i}:Hello Shunkun.&quot;
-10: print &quot;#{i}:Hello Shunkun.\n&quot;
+ 8: puts &quot;#i:Hello Shunkun.&quot;
+ 9: print
+&quot;#i:Hello Shunkun.&quot;
+10: print &quot;#i:Hello
+Shunkun.\n&quot;
 11: puts i+&quot;Hello Shunkun.&quot;
-12: puts i.to_s+&quot;Hello Shunkun.&quot;
+12: puts
+i.to_s+&quot;Hello Shunkun.&quot;
 13: h
-</code></pre>
+&lt;/code&gt;</p>
 
-<h2>method</h2>
+<h2 id="label-method">method</h2>
 
 <p>Input -&gt; Function -&gt; Output</p>
 
-<h2>学生実験風のレポート作成</h2>
-
-<ul>
-<li>せっかくhiki, md, latexのシステムができたにもかかわらず．．．</li>
-<li>何を定着させる？
-
-<ul>
-<li>gitの繰り返し作業</li>
-<li>書くこと，メモること，見直すこと</li>
-</ul></li>
-</ul>
+<h2 id="label-%E5%AD%A6%E7%94%9F%E5%AE%9F%E9%A8%93%E9%A2%A8%E3%81%AE%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E4%BD%9C%E6%88%90">学生実験風のレポート作成</h2>
+<ul><li>
+<p>せっかくhiki, md, latexのシステムができたにもかかわらず．．．</p>
+</li><li>
+<p>何を定着させる？</p>
+</li><li>
+<p>gitの繰り返し作業</p>
+</li><li>
+<p>書くこと，メモること，見直すこと</p>
+</li></ul>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:25 2016 by
+  Generated on Fri Sep 23 14:43:15 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>

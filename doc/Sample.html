@@ -96,8 +96,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/koki06/sample_spec.rb<span class="defines">,<br />
-  lib/koki06/test_sample.rb,<br /> lib/koki06/test_sample2.rb,<br /> lib/koki06/test_sample3.rb</span>
+    <dd>lib/koki06/Rspec/sample_spec.rb<span class="defines">,<br />
+  lib/koki06/Rspec/test_sample.rb,<br /> lib/koki06/Rspec/test_sample3.rb,<br /> lib/koki06/mini_test/test_sample2.rb,<br /> lib/koki06/mini_test/ex1_minitest.rb</span>
 </dd>
   </dl>
   
@@ -132,6 +132,50 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#ex1_1-class_method" title="ex1_1 (class method)">.<strong>ex1_1</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ex1_2-class_method" title="ex1_2 (class method)">.<strong>ex1_2</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#greeting-class_method" title="greeting (class method)">.<strong>greeting</strong>  &#x21d2; Object </a>
     
 
@@ -161,7 +205,69 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="greeting-class_method">
+  <h3 class="signature first" id="ex1_1-class_method">
+  
+    .<strong>ex1_1</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/koki06/mini_test/ex1_minitest.rb', line 5</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ex1_1'>ex1_1</span>
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello, world!</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ex1_2-class_method">
+  
+    .<strong>ex1_2</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/koki06/mini_test/ex1_minitest.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ex1_2'>ex1_2</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='int'>2</span><span class='op'>+</span><span class='int'>1</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_a'>a</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="greeting-class_method">
   
     .<strong>greeting</strong>  &#x21d2; <tt>Object</tt> 
   
@@ -180,7 +286,7 @@
 5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/koki06/sample_spec.rb', line 3</span>
+      <pre class="code"><span class="info file"># File 'lib/koki06/Rspec/sample_spec.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_greeting'>greeting</span>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello, world!</span><span class='tstring_end'>&#39;</span></span>
@@ -195,9 +301,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:26 2016 by
+  Generated on Fri Sep 23 14:43:16 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>

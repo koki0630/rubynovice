@@ -59,257 +59,272 @@
 
       <iframe id="search_frame" src="file_list.html"></iframe>
 
-      <div id="content"><div id='filecontents'><h1>課題</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-%E8%AA%B2%E9%A1%8C">課題</h1>
 
-<p>作成したisprime関数を用いて，100 までの素数をすべて求めて出力するプログラムを作れ. </p>
+<p>作成したisprime関数を用いて，100 までの素数をすべて求めて出力するプログラムを作れ.</p>
 
-<h1>課題2</h1>
+<h1 id="label-%E8%AA%B2%E9%A1%8C2">課題2</h1>
 
-<p>i番目の素数を返す関数ithprimeをつくれ. </p>
+<p>i番目の素数を返す関数ithprimeをつくれ.</p>
 
-<h1>エラトステネスのふるい</h1>
+<h1 id="label-%E3%82%A8%E3%83%A9%E3%83%88%E3%82%B9%E3%83%86%E3%83%8D%E3%82%B9%E3%81%AE%E3%81%B5%E3%82%8B%E3%81%84">エラトステネスのふるい</h1>
 
-<p>100 までの素数をすべて求めて出力するプログラムを作れ. </p>
+<p>100 までの素数をすべて求めて出力するプログラムを作れ.</p>
 
-<p>ヒント：エラトステネスのふるいが比較的簡単. 初めに0から100までの配列を用意し0で初期化する. これを番兵と見なして，まず2の倍数(2自身は除く)に全部印をつける. 次に，3の倍数(3自身は除く)に全部印をつける. こうして，100まで繰り返し，印がつかないで残っている数は「どの数の倍数でもない数」であるから素数である. </p>
+<p>ヒント：エラトステネスのふるいが比較的簡単. 初めに0から100までの配列を用意し0で初期化する.
+これを番兵と見なして，まず2の倍数(2自身は除く)に全部印をつける. 次に，3の倍数(3自身は除く)に全部印をつける.
+こうして，100まで繰り返し，印がつかないで残っている数は「どの数の倍数でもない数」であるから素数である.</p>
 
 <pre class="code ruby"><code class="ruby">表 1: 番兵 (配列) の変化の様子. 
 要素     1  2  3  4 5 6 7 8 9 10 ... 98 99 100 
 初期値   0  0  0  0 0 0 0 0 0 0  ...  0  0   0  
 2 が終了 0 [0] 0  1 0 1 0 1 0 1  ...  1  0   1  
-3 が終了 0  0 [0] 1 0 1 0 1 1 1  ...  1  1   1  
-</code></pre>
+3 が終了 0  0 [0] 1 0 1 0 1 1 1  ...  1  1   1</code></pre>
 
-<h1>双子素数(twin_primes)</h1>
+<h1 id="label-%E5%8F%8C%E5%AD%90%E7%B4%A0%E6%95%B0%28twin_primes%29">双子素数(twin_primes)</h1>
 
-<p>pも素数で，p+2も素数の時，これらを双子素数という．1から100までの双子素数を探せ．</p>
+<p>pも素数で，p+2も素数の時，これらを双子素数という．1から100までの双子素数を探せ．
+```ruby
+class Integer
+ def
+prime?
+ # p self
+ nmax=Math.sqrt(self).to_i
+ for i in 2..nmax do
+ if
+self%i==0 then</p>
 
-<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>Integer</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_prime?'>prime?</span>
-      <span class='comment'>#    p self
-</span>      <span class='id identifier rubyid_nmax'>nmax</span><span class='op'>=</span><span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_sqrt'>sqrt</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-      <span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='int'>2</span><span class='op'>..</span><span class='id identifier rubyid_nmax'>nmax</span> <span class='kw'>do</span>
-      <span class='kw'>if</span> <span class='kw'>self</span><span class='op'>%</span><span class='id identifier rubyid_i'>i</span><span class='op'>==</span><span class='int'>0</span> <span class='kw'>then</span>
-<span class='comment'>#        p i
-</span>        <span class='kw'>return</span> <span class='kw'>false</span>
-      <span class='kw'>end</span>
-    <span class='kw'>end</span>
-    <span class='kw'>return</span> <span class='kw'>true</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
+<h1 id="label-p+i">p i</h1>
 
-<span class='id identifier rubyid_p'>p</span> <span class='int'>13</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span>
-<span class='id identifier rubyid_p'>p</span> <span class='int'>113</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span>
-<span class='id identifier rubyid_p'>p</span> <span class='int'>131</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span>
-<span class='id identifier rubyid_p'>p</span> <span class='int'>133</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span>
+<pre class="code ruby"><code class="ruby">    return false
+  end
+end
+return true</code></pre>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_twin_primes'>twin_primes</span>
-  <span class='int'>101</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
-    <span class='id identifier rubyid_print'>print</span> <span class='id identifier rubyid_i'>i</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>,</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='id identifier rubyid_i'>i</span><span class='op'>+</span><span class='int'>2</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='op'>+</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span><span class='rparen'>)</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
+<p>end
+end</p>
 
-<span class='id identifier rubyid_twin_primes'>twin_primes</span>
-</code></pre>
+<p>p 13.prime?
+p 113.prime?
+p 131.prime?
+p 133.prime?</p>
 
-<h1>メルセンヌ数</h1>
+<p>def twin_primes
+ 101.times{|i|
+ print i,&quot;,&quot;,i+2,&quot;\n&quot; if
+(i.prime? and (i+2).prime?)
+ }
+end</p>
+
+<p>twin_primes
+```</p>
+
+<h1 id="label-%E3%83%A1%E3%83%AB%E3%82%BB%E3%83%B3%E3%83%8C%E6%95%B0">メルセンヌ数</h1>
 
 <p>n = 257 までのメルセンヌ数 (Mn = 2^n − 1) で,素数であるときの n を表示
 するプログラムをつくれ.答えは,
-n = 2,3,5,7,13,17,19,31,61,89,107,127 だけであることを確かめよ.素数かどうかの判定は isprime(Mn) でできる.
+n =
+2,3,5,7,13,17,19,31,61,89,107,127 だけであることを確かめよ.素数かどうかの判定は isprime(Mn)
+でできる.
 この関数の戻り値は真偽 (true or false) であるので,条件文 (if 文) で使える.</p>
 
-<h1>ドリーン・アンドリカ</h1>
+<h1 id="label-%E3%83%89%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%BB%E3%82%A2%E3%83%B3%E3%83%89%E3%83%AA%E3%82%AB">ドリーン・アンドリカ</h1>
 
-<p>ドリーン・アンドリカは，$n$番目の素数を$p_n$とすると，すべての$n$に対して$\sqrt(p_(n+1))-\sqrt(p_(n))&lt;1$が成立すると予想している．$n$を1000未満としたとき，最も大きな差は$\sqrt(11)-\sqrt(7)=0.670873\cdots$であり，確かに1を下回っている．このことを確かめるプログラムを作れ．(20点）</p>
+<p>ドリーン・アンドリカは，$n$番目の素数を$p_n$とすると，すべての$n$に対して$sqrt(p<em>(n+1))-sqrt(p</em>(n))&lt;1$が成立すると予想している．$n$を1000未満としたとき，最も大きな差は$sqrt(11)-sqrt(7)=0.670873cdots$であり，確かに1を下回っている．このことを確かめるプログラムを作れ．(20点）</p>
 
 <p>ヒント：$i$番目の素数はithprime(i)で求められる．</p>
 
-<h1>いとこ素数</h1>
+<h1 id="label-%E3%81%84%E3%81%A8%E3%81%93%E7%B4%A0%E6%95%B0">いとこ素数</h1>
 
 <p>いとこ素数とは，差が4である素数の組のことである．200未満のいとこ素数を表示するプログラムを作れ．正しくは14組だが，13組でもよい．</p>
 
-<h1>ソフィ・ジェルマン(Sophi Germain)素数</h1>
+<h1 id="label-%E3%82%BD%E3%83%95%E3%82%A3%E3%83%BB%E3%82%B8%E3%82%A7%E3%83%AB%E3%83%9E%E3%83%B3%28Sophi+Germain%29%E7%B4%A0%E6%95%B0">ソフィ・ジェルマン(Sophi Germain)素数</h1>
 
 <p>ソフィ・ジェルマン(Sophi Germain)素数とは，pが素数でかつ2p+1もまた素数のpをさす．100以下のソフィ・ジェルマン素数を求めよ．</p>
 
-<h1>メルセンヌ(Mersenne)素数</h1>
+<h1 id="label-%E3%83%A1%E3%83%AB%E3%82%BB%E3%83%B3%E3%83%8C%28Mersenne%29%E7%B4%A0%E6%95%B0">メルセンヌ(Mersenne)素数</h1>
 
 <p>メルセンヌ(Mersenne)素数とは，qが素数でかつ2^q-1もまた素数のqをさす．100以下のメルセンヌ素数を求めよ．</p>
 
-<h1>4n+1の形の素数</h1>
+<h1 id="label-4n%2B1%E3%81%AE%E5%BD%A2%E3%81%AE%E7%B4%A0%E6%95%B0">4n+1の形の素数</h1>
 
 <p>この形の素数はふたつの平方数の和に一意的に分解される。詳しくは高木貞治『初等整数論講義』参照。</p>
 
-<h1>階乗素数 Factorial Prime</h1>
-
+<h1 id="label-%E9%9A%8E%E4%B9%97%E7%B4%A0%E6%95%B0+Factorial+Prime">階乗素数 Factorial Prime</h1>
 <dl>
 <dt>Definition</dt><dd>n! +1 若しくは n!-1 の形の素数。</dd>
-</dl>
+</dl><ul><li>
+<p>n!+1 の方は n=1,2,3,11,27,37,41,73,116,154,320,340,399,427,872,1477 で素数である</p>
+</li><li>
+<p>n!-1 の方は
+n=3,4,6,7,12,14,30,32,33,38,97,166,324,379,469,546,974,1963,3507,3610
+で素数である。</p>
+</li><li>
+<p>n &lt;4580 までは確かめられているらしい。(C.Caldwell)
+更に n!! +1 若しくは n!! +1
+の形の素数を多階乗素数と言う。 n!!! +1 若しくは n!!! +1 等々も考えられている。 因みに n!! = n(n-2)(n-4)…
+、n!!! = n(n-3)(n-6)…
+&lt;dl&gt;
+&lt;<a
+href="http://好田">dt>参考文献</dt><dd></a> 好田順治,『素数の不思議』, 現代数学社,
+1999.&lt;/dd&gt;
+&lt;/dl&gt;</p>
+</li></ul>
 
-<ul>
-<li>n!+1 の方は n=1,2,3,11,27,37,41,73,116,154,320,340,399,427,872,1477 で素数である</li>
-<li>n!-1 の方は n=3,4,6,7,12,14,30,32,33,38,97,166,324,379,469,546,974,1963,3507,3610 で素数である。</li>
-<li>n <4580 までは確かめられているらしい。(C.Caldwell)
-更に n!! +1 若しくは n!! +1 の形の素数を多階乗素数と言う。 n!!! +1 若しくは n!!! +1 等々も考えられている。 因みに n!! = n(n-2)(n-4)… 、n!!! = n(n-3)(n-6)…
-<dl>
-<dt>参考文献</dt><dd>[好田] 好田順治,『素数の不思議』, 現代数学社, 1999.</dd>
-</dl></li>
-</ul>
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Integer</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">prime?</span>
+      <span class="ruby-comment">#    p self</span>
+      <span class="ruby-identifier">nmax</span>=<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-identifier">nmax</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span><span class="ruby-operator">%</span><span class="ruby-identifier">i</span><span class="ruby-operator">==</span><span class="ruby-value">0</span> <span class="ruby-keyword">then</span>
+<span class="ruby-comment">#        p i</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
 
-<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>Integer</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_prime?'>prime?</span>
-      <span class='comment'>#    p self
-</span>      <span class='id identifier rubyid_nmax'>nmax</span><span class='op'>=</span><span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_sqrt'>sqrt</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-      <span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='int'>2</span><span class='op'>..</span><span class='id identifier rubyid_nmax'>nmax</span> <span class='kw'>do</span>
-      <span class='kw'>if</span> <span class='kw'>self</span><span class='op'>%</span><span class='id identifier rubyid_i'>i</span><span class='op'>==</span><span class='int'>0</span> <span class='kw'>then</span>
-<span class='comment'>#        p i
-</span>        <span class='kw'>return</span> <span class='kw'>false</span>
-      <span class='kw'>end</span>
-    <span class='kw'>end</span>
-    <span class='kw'>return</span> <span class='kw'>true</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
+<span class="ruby-identifier">p</span> <span class="ruby-value">13</span>.<span class="ruby-identifier">prime?</span>
+<span class="ruby-identifier">p</span> <span class="ruby-value">113</span>.<span class="ruby-identifier">prime?</span>
+<span class="ruby-identifier">p</span> <span class="ruby-value">131</span>.<span class="ruby-identifier">prime?</span>
+<span class="ruby-identifier">p</span> <span class="ruby-value">133</span>.<span class="ruby-identifier">prime?</span>
 
-<span class='id identifier rubyid_p'>p</span> <span class='int'>13</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span>
-<span class='id identifier rubyid_p'>p</span> <span class='int'>113</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span>
-<span class='id identifier rubyid_p'>p</span> <span class='int'>131</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span>
-<span class='id identifier rubyid_p'>p</span> <span class='int'>133</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">twin_primes</span>
+  <span class="ruby-value">101</span>.<span class="ruby-identifier">times</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">print</span> <span class="ruby-identifier">i</span>,<span class="ruby-string">&quot;,&quot;</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">i</span>.<span class="ruby-identifier">prime?</span> <span class="ruby-keyword">and</span> (<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>).<span class="ruby-identifier">prime?</span>)
+  }
+<span class="ruby-keyword">end</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_twin_primes'>twin_primes</span>
-  <span class='int'>101</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
-    <span class='id identifier rubyid_print'>print</span> <span class='id identifier rubyid_i'>i</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>,</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='id identifier rubyid_i'>i</span><span class='op'>+</span><span class='int'>2</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='op'>+</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_prime?'>prime?</span><span class='rparen'>)</span>
-  <span class='rbrace'>}</span>
-<span class='kw'>end</span>
+<span class="ruby-identifier">twin_primes</span>
+</pre>
 
-<span class='id identifier rubyid_twin_primes'>twin_primes</span>
-</code></pre>
+<pre class="ruby"><span class="ruby-keyword">for</span> <span class="ruby-identifier">p</span> <span class="ruby-identifier">from</span> <span class="ruby-value">1</span> <span class="ruby-identifier">to</span> <span class="ruby-value">100</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">p</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">isprime</span>(<span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-identifier">p</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">print</span>(<span class="ruby-identifier">p</span>,<span class="ruby-value">2</span><span class="ruby-operator">*</span><span class="ruby-identifier">p</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>);
+  <span class="ruby-keyword">end</span>; 
+<span class="ruby-keyword">end</span>;
+                              <span class="ruby-value">2</span>, <span class="ruby-value">5</span>
+                              <span class="ruby-value">3</span>, <span class="ruby-value">7</span>
+                             <span class="ruby-value">5</span>, <span class="ruby-value">11</span>
+                             <span class="ruby-value">11</span>, <span class="ruby-value">23</span>
+                             <span class="ruby-value">23</span>, <span class="ruby-value">47</span>
+                             <span class="ruby-value">29</span>, <span class="ruby-value">59</span>
+                             <span class="ruby-value">41</span>, <span class="ruby-value">83</span>
+                            <span class="ruby-value">53</span>, <span class="ruby-value">107</span>
+                            <span class="ruby-value">83</span>, <span class="ruby-value">167</span>
+                            <span class="ruby-value">89</span>, <span class="ruby-value">179</span>
 
-<pre class="code ruby"><code class="ruby">for p from 1 to 100 do
-  if (isprime(p) and isprime(2*p+1)) then
-    print(p,2*p+1);
-  end; 
-end;
-                              2, 5
-                              3, 7
-                             5, 11
-                             11, 23
-                             23, 47
-                             29, 59
-                             41, 83
-                            53, 107
-                            83, 167
-                            89, 179
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">q</span> <span class="ruby-identifier">from</span> <span class="ruby-value">1</span> <span class="ruby-identifier">to</span> <span class="ruby-value">100</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">q</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">isprime</span>(<span class="ruby-value">2</span><span class="ruby-operator">^</span><span class="ruby-identifier">q</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">print</span>(<span class="ruby-identifier">q</span>);
+  <span class="ruby-keyword">end</span>; 
+<span class="ruby-keyword">end</span>;
+                               <span class="ruby-value">2</span>
+                               <span class="ruby-value">3</span>
+                               <span class="ruby-value">5</span>
+                               <span class="ruby-value">7</span>
+                               <span class="ruby-value">13</span>
+                               <span class="ruby-value">17</span>
+                               <span class="ruby-value">19</span>
+                               <span class="ruby-value">31</span>
+                               <span class="ruby-value">61</span>
+                               <span class="ruby-value">89</span>
 
-for q from 1 to 100 do
-  if (isprime(q) and isprime(2^q-1)) then
-    print(q);
-  end; 
-end;
-                               2
-                               3
-                               5
-                               7
-                               13
-                               17
-                               19
-                               31
-                               61
-                               89
-
-A:=[];
-for q from 1 to 100 do
-  if (isprime(q) and modp(q,4)=1) then
-    print(q);
-    A:=[op(A),q];
-  end;
-end;
+<span class="ruby-constant">A</span>:=[];
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">q</span> <span class="ruby-identifier">from</span> <span class="ruby-value">1</span> <span class="ruby-identifier">to</span> <span class="ruby-value">100</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">q</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">modp</span>(<span class="ruby-identifier">q</span>,<span class="ruby-value">4</span>)=<span class="ruby-value">1</span>) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">print</span>(<span class="ruby-identifier">q</span>);
+    <span class="ruby-constant">A</span>:=[<span class="ruby-identifier">op</span>(<span class="ruby-constant">A</span>),<span class="ruby-identifier">q</span>];
+  <span class="ruby-keyword">end</span>;
+<span class="ruby-keyword">end</span>;
                                []
-                               5
-                               13
-                               17
-                               29
-                               37
-                               41
-                               53
-                               61
-                               73
-                               89
-                               97
-nA:=nops(A);
-for p from 1 to nA do
- n:=A[p];
- nf:=evalf(sqrt(n)):
- for i from 1 to nf do
-  for j from i to nf do
-    if i^2+j^2=n then
-      print(i,j,n);
-      break;
-    end;
-  end;
- end;
-end:
+                               <span class="ruby-value">5</span>
+                               <span class="ruby-value">13</span>
+                               <span class="ruby-value">17</span>
+                               <span class="ruby-value">29</span>
+                               <span class="ruby-value">37</span>
+                               <span class="ruby-value">41</span>
+                               <span class="ruby-value">53</span>
+                               <span class="ruby-value">61</span>
+                               <span class="ruby-value">73</span>
+                               <span class="ruby-value">89</span>
+                               <span class="ruby-value">97</span>
+<span class="ruby-identifier">nA</span>:=<span class="ruby-identifier">nops</span>(<span class="ruby-constant">A</span>);
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">p</span> <span class="ruby-identifier">from</span> <span class="ruby-value">1</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">nA</span> <span class="ruby-keyword">do</span>
+ <span class="ruby-identifier">n</span>:=<span class="ruby-constant">A</span>[<span class="ruby-identifier">p</span>];
+ <span class="ruby-identifier">nf</span>:=<span class="ruby-identifier">evalf</span>(<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">n</span>))<span class="ruby-operator">:</span>
+ <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-identifier">from</span> <span class="ruby-value">1</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">nf</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-identifier">from</span> <span class="ruby-identifier">i</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">nf</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">^</span><span class="ruby-value">2</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span><span class="ruby-operator">^</span><span class="ruby-value">2</span>=<span class="ruby-identifier">n</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">print</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>,<span class="ruby-identifier">n</span>);
+      <span class="ruby-keyword">break</span>;
+    <span class="ruby-keyword">end</span>;
+  <span class="ruby-keyword">end</span>;
+ <span class="ruby-keyword">end</span>;
+<span class="ruby-keyword">end</span><span class="ruby-operator">:</span>
 
-                               11
-                            1, 2, 5
-                            2, 3, 13
-                            1, 4, 17
-                            2, 5, 29
-                            1, 6, 37
-                            4, 5, 41
-                            2, 7, 53
-                            5, 6, 61
-                            3, 8, 73
-                            5, 8, 89
-                            4, 9, 97
+                               <span class="ruby-value">11</span>
+                            <span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">5</span>
+                            <span class="ruby-value">2</span>, <span class="ruby-value">3</span>, <span class="ruby-value">13</span>
+                            <span class="ruby-value">1</span>, <span class="ruby-value">4</span>, <span class="ruby-value">17</span>
+                            <span class="ruby-value">2</span>, <span class="ruby-value">5</span>, <span class="ruby-value">29</span>
+                            <span class="ruby-value">1</span>, <span class="ruby-value">6</span>, <span class="ruby-value">37</span>
+                            <span class="ruby-value">4</span>, <span class="ruby-value">5</span>, <span class="ruby-value">41</span>
+                            <span class="ruby-value">2</span>, <span class="ruby-value">7</span>, <span class="ruby-value">53</span>
+                            <span class="ruby-value">5</span>, <span class="ruby-value">6</span>, <span class="ruby-value">61</span>
+                            <span class="ruby-value">3</span>, <span class="ruby-value">8</span>, <span class="ruby-value">73</span>
+                            <span class="ruby-value">5</span>, <span class="ruby-value">8</span>, <span class="ruby-value">89</span>
+                            <span class="ruby-value">4</span>, <span class="ruby-value">9</span>, <span class="ruby-value">97</span>
 
-for q from 1 to 100 do
-  if isprime(q!+1) then
-    print(q);
-  end; 
-end;
-                               1
-                               2
-                               3
-                               11
-                               27
-                               37
-                               41
-                               73
-                               77
-for q from 1 to 100 do
-  if isprime(q!-1) then
-    print(q);
-  end; 
-end;
-                               3
-                               4
-                               6
-                               7
-                               12
-                               14
-                               30
-                               32
-                               33
-                               38
-                               94
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">q</span> <span class="ruby-identifier">from</span> <span class="ruby-value">1</span> <span class="ruby-identifier">to</span> <span class="ruby-value">100</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">q!</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">print</span>(<span class="ruby-identifier">q</span>);
+  <span class="ruby-keyword">end</span>; 
+<span class="ruby-keyword">end</span>;
+                               <span class="ruby-value">1</span>
+                               <span class="ruby-value">2</span>
+                               <span class="ruby-value">3</span>
+                               <span class="ruby-value">11</span>
+                               <span class="ruby-value">27</span>
+                               <span class="ruby-value">37</span>
+                               <span class="ruby-value">41</span>
+                               <span class="ruby-value">73</span>
+                               <span class="ruby-value">77</span>
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">q</span> <span class="ruby-identifier">from</span> <span class="ruby-value">1</span> <span class="ruby-identifier">to</span> <span class="ruby-value">100</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">q!</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">print</span>(<span class="ruby-identifier">q</span>);
+  <span class="ruby-keyword">end</span>; 
+<span class="ruby-keyword">end</span>;
+                               <span class="ruby-value">3</span>
+                               <span class="ruby-value">4</span>
+                               <span class="ruby-value">6</span>
+                               <span class="ruby-value">7</span>
+                               <span class="ruby-value">12</span>
+                               <span class="ruby-value">14</span>
+                               <span class="ruby-value">30</span>
+                               <span class="ruby-value">32</span>
+                               <span class="ruby-value">33</span>
+                               <span class="ruby-value">38</span>
+                               <span class="ruby-value">94</span>
 
-for i from 1 to 200 do
-  if (isprime(i) and isprime(i+2) and isprime(i+6) and isprime(i+8)) then
-    print(i,i+2,i+6,i+8);
-  end if;
-end do;
-                          5, 7, 11, 13
-                         11, 13, 17, 19
-                       101, 103, 107, 109
-                       191, 193, 197, 199
-</code></pre>
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-identifier">from</span> <span class="ruby-value">1</span> <span class="ruby-identifier">to</span> <span class="ruby-value">200</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">i</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">6</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">isprime</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">8</span>)) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">print</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">6</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">8</span>);
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span>;
+<span class="ruby-keyword">end</span> <span class="ruby-keyword">do</span>;
+                          <span class="ruby-value">5</span>, <span class="ruby-value">7</span>, <span class="ruby-value">11</span>, <span class="ruby-value">13</span>
+                         <span class="ruby-value">11</span>, <span class="ruby-value">13</span>, <span class="ruby-value">17</span>, <span class="ruby-value">19</span>
+                       <span class="ruby-value">101</span>, <span class="ruby-value">103</span>, <span class="ruby-value">107</span>, <span class="ruby-value">109</span>
+                       <span class="ruby-value">191</span>, <span class="ruby-value">193</span>, <span class="ruby-value">197</span>, <span class="ruby-value">199</span>
+</pre>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Sep 14 15:30:25 2016 by
+  Generated on Fri Sep 23 14:43:15 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.5 (ruby-2.2.2).
+  0.9.5 (ruby-2.0.0).
 </div>
 
     </div>
